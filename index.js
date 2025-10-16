@@ -11,45 +11,43 @@
 //Se vitórias for entre 91 e 100= Lendário
 //Se vitórias for maior ou igual a 101 = Imortal
 
-let SaldoDeVitorias = soma(10,1)
-       
-		let nomeDoHeroi= ("Rei da velocidade")
-		let nivel =("Ferro Bronze prata ouro diamante Lendario imortal")
-		
+let SaldoDeVitorias = saldo(147,32)
+let nomeDoHeroi= ("Mr Rei da velocidade")
+let niveis =("Ferro Bronze prata ouro diamante Lendario imortal")
+let nivel = niveis.split (" ");
         
-        function soma(vitoria,derrota){
-        let SaldoDeVitorias = (vitoria - derrota)
-        		
-        console.log("O Herói tem de saldo de **" + SaldoDeVitorias + "** está no nível de **nivel**")
+           
+         function saldo(vitoria,derrota){
+            let saldo = (vitoria - derrota)
+            return saldo;          
+				}
+            
+            function saberNivel (saldo){
+            
+				if  (saldo <= 10) {
+                return 0;
+                } else if (saldo >= 11 && saldo <= 20){
+                return 1;
+                } else if ( saldo >= 21 && saldo <=50){
+                return 2;
+                } else if ( saldo >= 51 && saldo <=80){
+                return 3;
+                } else if ( saldo >= 81 && saldo <=90){
+                return 4;
+                } else if ( saldo >= 91 && saldo <=100){
+                return 5;
+                } else if ( saldo >= 101){
+                return 6;
+                }  
+                }
+                
+                let nivelObtido = saberNivel (SaldoDeVitorias)
+                let nivelDoHeroi = nivel[nivelObtido]
+            
 
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        console.log("O Herói " + nomeDoHeroi + " tem de saldo de **" + SaldoDeVitorias + "** está no nível de **" + nivel[nivelObtido] + " **" )
+        
+        
 
 
 
